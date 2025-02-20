@@ -27,6 +27,10 @@ app.use(productRoutes);
 const shopRoutes = require("./routes/shop");
 app.use(shopRoutes);
 
+const orderRoutes = require("./routes/orders");
+app.use(orderRoutes);
+
+
 sequelize.sync().then(() => {
     return models.User.findByPk(1);
 }).then(user => {
